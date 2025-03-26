@@ -2,6 +2,7 @@
 
 DEFAULT_DATASET_PATH = 'data/data.csv'
 DEFAULT_OUTPUT_FOLDER = 'output'
+DEFAULT_STATISTICS_FILE = 'statistics.csv'
 
 # COLUMN LABELS
 

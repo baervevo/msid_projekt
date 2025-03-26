@@ -3,7 +3,7 @@ import os
 import pandas as pd
 import numpy as np
 
-from constants import NUMERICAL, CATEGORICAL, PERCENTILE, FEATURE, FEATURE_TYPE, MEDIAN, MEAN, STANDARD_DEVIATION, MINIMUM, MAXIMUM, MISSING_VALUES, UNIQUE_CLASSES, CLASS_PROPORTIONS, DEFAULT_DATASET_PATH, DEFAULT_OUTPUT_FOLDER
+from constants import NUMERICAL, CATEGORICAL, PERCENTILE, FEATURE, FEATURE_TYPE, MEDIAN, MEAN, STANDARD_DEVIATION, MINIMUM, MAXIMUM, MISSING_VALUES, UNIQUE_CLASSES, CLASS_PROPORTIONS, DEFAULT_DATASET_PATH, DEFAULT_OUTPUT_FOLDER, DEFAULT_STATISTICS_FILE
 from io_operations import save_to_csv, read_from_csv
 
 def get_percentile(dataset, column, percentile):
@@ -42,7 +42,7 @@ def calculate_statistics(dataset):
 def main():
     if len(sys.argv) != 3:
         dataset_path = DEFAULT_DATASET_PATH
-        output_path = os.path.join(DEFAULT_OUTPUT_FOLDER, 'statistics.csv')
+        output_path = os.path.join(DEFAULT_OUTPUT_FOLDER, DEFAULT_STATISTICS_FILE)
     else:
         dataset_path = sys.argv[1]
         output_path = sys.argv[2]
