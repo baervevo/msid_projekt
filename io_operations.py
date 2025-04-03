@@ -1,8 +1,8 @@
 import pandas as pd
 
-def save_to_csv(data, path):
+def save_to_csv(df, path):
     try:
-        pd.DataFrame(data).to_csv(path, index=False)
+        df.to_csv(path, index=False)
     except Exception as e:
         print(f'Error: {e}')
 
