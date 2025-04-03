@@ -1,9 +1,18 @@
+import sys
 import seaborn as sns
 import matplotlib.pyplot as plt
 
+args = sys.argv
+if len(args) != 2:
+    print("Usage: python data_analysis_main.py <dataset_path>")
+    sys.exit(1)
+else:
+    dataset_path = args[1]
+    print(f"Using dataset: {dataset_path}")
+
 from io_operations import read_from_csv
 
-df = read_from_csv('data/dataset.csv')
+df = read_from_csv(dataset_path)
 
 categorical_features = df.select_dtypes(exclude=["number"]).columns  
 num_features = len(categorical_features)
@@ -29,7 +38,7 @@ plt.savefig('output/fig_0.png')
 
 #
 
-df = read_from_csv('data/dataset.csv')
+df = read_from_csv(dataset_path)
 
 numerical_features = df.select_dtypes(include=["number"]).columns
 num_features = len(numerical_features)
@@ -54,7 +63,7 @@ plt.savefig('output/fig_1.png')
 
 #
 
-df = read_from_csv('data/dataset.csv')
+df = read_from_csv(dataset_path)
 
 plt.figure(figsize=(10, 10))
 sns.barplot(
@@ -218,7 +227,7 @@ plt.savefig('output/fig_9.png')
 
 from sklearn.manifold import TSNE
 
-df = read_from_csv('data/dataset.csv')
+df = read_from_csv(dataset_path)
 df_copy = df.copy()
 
 le = LabelEncoder()

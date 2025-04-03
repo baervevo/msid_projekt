@@ -15,7 +15,7 @@ https://archive.ics.uci.edu/dataset/544/estimation+of+obesity+levels+based+on+ea
 
 1. **Clone the Repository**:
     ```bash
-    git clone <repository_url>
+    git clone https://github.com/baervevo/msid_projekt.git
     cd projekt_czesc_1
     ```
 
@@ -37,13 +37,14 @@ https://archive.ics.uci.edu/dataset/544/estimation+of+obesity+levels+based+on+ea
 1. **Run `data_analysis_main.py`**:
     Execute the main script to analyze your dataset:
     ```bash
-    python data_analysis_main.py
+    python data_analysis_main.py <dataset_path>
     ```
+    This script will generate all the figures in a folder called output.
 
 2. **Use `base_statistics.py`**:
     Calculate the basic statistics for each feature in the chosen dataset and output them into a file.
     ```bash
-    python base_statistics.py <input_dataset> <output_file>
+    python base_statistics.py <dataset_path> <output_file>
     ```
 
 ## Notes
